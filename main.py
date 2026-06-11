@@ -8,7 +8,10 @@ client = genai.Client(api_key=os.getenv("API_KEY"))
 
 @app.route('/')
 def index():
-    return render_template("index.html")
+    return render_template(
+        "index.html",
+        api_key=os.getenv("API_KEY")
+    )
 
 app.run(
     host="0.0.0.0",
