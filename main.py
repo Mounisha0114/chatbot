@@ -10,4 +10,7 @@ client = genai.Client(api_key=os.getenv("API_KEY"))
 def index():
     return render_template("index.html")
 
-app.run(port=5000)
+app.run(
+    host="0.0.0.0",
+    port=int(os.environ.get("PORT", 5000))
+)
